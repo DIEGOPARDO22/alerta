@@ -11,6 +11,7 @@ export default function ErrorPage() {
         <title>Error - Alerta Amber</title>
         <meta name="description" content="Página de error en la aplicación Alerta Amber" />
       </Head>
+      
 
       <main className={styles.main}>
         <h1>¡Ups! Algo salió mal...</h1>

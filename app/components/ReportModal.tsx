@@ -12,6 +12,7 @@ interface ReportModalProps {
   onSubmit: (denunciante: string, hora: string, ubicacion: string, fecha: string) => void;
 }
 
+
 const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose, onSubmit }) => {
   const [denunciante, setDenunciante] = useState('');
   const [hora, setHora] = useState('');

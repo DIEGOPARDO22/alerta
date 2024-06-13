@@ -8,6 +8,7 @@ interface AmberAlertProps {
     onReport: () => void;
 }
 
+
 const AmberAlert: React.FC<AmberAlertProps> = ({ onReport }) => {
     return (
         <div className={styles.container}>

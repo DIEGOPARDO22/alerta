@@ -10,6 +10,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
+
 interface LocationPickerProps {
   initialCoordinates: [number, number] | null;
   onLocationSelect: (lat: number, lng: number) => void;

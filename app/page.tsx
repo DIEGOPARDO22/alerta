@@ -34,6 +34,7 @@ export default function Home() {
       console.error('window object is not available');
     }
   };
+  
 
   useEffect(() => {
     // Any side effects that do not belong to handleSubmit can go here
