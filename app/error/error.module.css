@@ -1,0 +1,24 @@
+/* styles/Error.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .main {
+    text-align: center;
+  }
+  
+  .link {
+    color: #0070f3;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .link:hover {
+    color: #0040a1;
+  }
+  

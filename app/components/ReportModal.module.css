@@ -1,0 +1,93 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    padding: 1em;
+}
+
+.modal {
+    background: white;
+    padding: 2em;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal h2 {
+    margin-top: 0;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.modal input {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+}
+
+.mapButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.actionButtons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1em;
+}
+
+.actionButtons button {
+    margin-left: 1em;
+}
+
+.modal button {
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.modal button:first-of-type {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.modal button:last-of-type {
+    background-color: #ccc;
+    color: black;
+    border: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .modal {
+        padding: 1em;
+    }
+
+    .mapButtons {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .actionButtons {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .actionButtons button {
+        margin-left: 0;
+        margin-top: 0.5em;
+    }
+}
