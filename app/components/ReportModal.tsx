@@ -8,7 +8,7 @@ const LocationPicker = dynamic(() => import('./LocationPicker'), { ssr: false })
 interface ReportModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (denunciante: string, hora: string, ubicacion: string, fecha: string) => void;
+  onSubmit: (denunciante: string, hora: string, ubicacion: string, fecha: string, callback: () => void) => void;
 }
 
 const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose, onSubmit }) => {
@@ -73,19 +73,16 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose, onSubmit }) 
     };
 
     try {
-      const response = await fetch('https://example.com/report', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(reportData),
+
+      onSubmit(denunciante, hora, ubicacion, fecha, () => {
+        const mensaje = `Datos del desaparecido:\nNombre: Juan Pérez\nEdad: 10 años\nFecha de desaparición: 01/06/2024\nÚltima ubicación conocida: Parque Central\n\nDatos del denunciante:\nNombre: ${denunciante}\nHora: ${hora}\nUbicación: ${ubicacion}\nFecha: ${fecha}`;
+        const whatsappUrl = `https://wa.me/51984253341?text=${encodeURIComponent(mensaje)}`;
+        if (typeof window !== 'undefined') {
+          window.open(whatsappUrl, '_blank');
+        } else {
+          console.error('window object is not available');
+        }
       });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      onSubmit(denunciante, hora, ubicacion, fecha);
       onClose();
     } catch (error) {
       console.error('Error submitting the report:', error);

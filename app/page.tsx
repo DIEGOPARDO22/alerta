@@ -53,7 +53,7 @@ export default function Home() {
       </main>
       <footer className={styles.footer}>
         <div className={styles.whatsappIconContainer}>
-          <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer" className={styles.whatsappIcon}>
+          <a href="https://wa.me/51984253341" target="_blank" rel="noopener noreferrer" className={styles.whatsappIcon}>
             <Image src="/whatsapp-removebg-previe.png" alt="WhatsApp" width={60} height={60} />
           </a>
         </div>
