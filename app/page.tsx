@@ -25,7 +25,7 @@ export default function Home() {
 
   const handleSubmit = (denunciante: string, hora: string, ubicacion: string, fecha: string) => {
     const mensaje = `Datos del desaparecido:\nNombre: Juan Pérez\nEdad: 10 años\nFecha de desaparición: 01/06/2024\nÚltima ubicación conocida: Parque Central\n\nDatos del denunciante:\nNombre: ${denunciante}\nHora: ${hora}\nUbicación: ${ubicacion}\nFecha: ${fecha}`;
-    const whatsappUrl = `https://wa.me/51999999999?text=${encodeURIComponent(mensaje)}`;
+    const whatsappUrl = `https://wa.me/51984253341?text=${encodeURIComponent(mensaje)}`;
   
     if (typeof window !== 'undefined') {
       window.open(whatsappUrl, '_blank');
