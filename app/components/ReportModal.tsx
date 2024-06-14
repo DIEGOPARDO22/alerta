@@ -1,4 +1,3 @@
-// components/ReportModal.tsx
 import React, { useState, useEffect } from 'react';
 import style from './ReportModal.module.css';
 import dynamic from 'next/dynamic';
@@ -11,7 +10,6 @@ interface ReportModalProps {
   onClose: () => void;
   onSubmit: (denunciante: string, hora: string, ubicacion: string, fecha: string) => void;
 }
-
 
 const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose, onSubmit }) => {
   const [denunciante, setDenunciante] = useState('');
@@ -66,9 +64,32 @@ const ReportModal: React.FC<ReportModalProps> = ({ isOpen, onClose, onSubmit }) 
     }
   };
 
-  const handleSubmit = () => {
-    onSubmit(denunciante, hora, ubicacion, fecha);
-    onClose();
+  const handleSubmit = async () => {
+    const reportData = {
+      denunciante,
+      hora,
+      ubicacion,
+      fecha,
+    };
+
+    try {
+      const response = await fetch('https://example.com/report', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reportData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      onSubmit(denunciante, hora, ubicacion, fecha);
+      onClose();
+    } catch (error) {
+      console.error('Error submitting the report:', error);
+    }
   };
 
   return (
